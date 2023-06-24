@@ -1,0 +1,251 @@
+.bg-perso {
+  background-color: whitesmoke;
+}
+
+.dropdown {
+  float: right !important;
+  padding-right: 20px;
+}
+
+.msgFormEnreg {
+  color: red !important;
+  font-size: 11px !important;
+}
+
+.panierPlus {
+  float: right;
+  font-size: 24px !important;
+  margin-right: -8px;
+}
+
+#bdc {
+  margin-right: 30px;
+}
+
+#nbart {
+  margin-left: -8px;
+}
+
+.deconnexion {
+  float: right;
+  color: grey;
+  font-size: 30px !important;
+  cursor: pointer;
+}
+
+.closeBtn {
+  color: red;
+  cursor: pointer;
+}
+
+.bgcolorFacture {
+  background-color: #bbabab !important;
+}
+
+#payer {
+  margin-left: 10px;
+  color: red;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.maCard {
+  margin-top: 25px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.liadmin {
+  color: white;
+}
+
+.liadmin:hover {
+  color: yellow;
+}
+
+.container-fluid {
+  display: flex;
+  white-space: nowrap;
+}
+
+.navbar-brand {
+  width: 70%;
+}
+
+.navbar-collapse {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: space-around;
+}
+
+#logo {
+  width: 10%;
+  height: 15%;
+}
+
+main header {
+  width: 100%;
+  height: 50vh;
+  background-image: url("../images/header.png");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: white;
+  white-space: nowrap;
+  position: absolute;
+  text-transform: uppercase;
+  font-family: verdana;
+  font-size: 6em;
+  font-weight: 700;
+  color: #f5f5f5;
+  text-shadow: 1px 1px 1px #919191, 1px 2px 1px #919191, 1px 3px 1px #919191,
+    1px 4px 1px #919191, 1px 5px 1px #919191, 1px 6px 1px #919191,
+    1px 7px 1px #919191, 1px 8px 1px #919191, 1px 9px 1px #919191,
+    1px 10px 1px #919191, 1px 18px 6px rgba(16, 16, 16, 0.4),
+    1px 22px 10px rgba(16, 16, 16, 0.2), 1px 25px 35px rgba(16, 16, 16, 0.2),
+    1px 30px 60px rgba(16, 16, 16, 0.4);
+}
+
+main h2 {
+  text-align: center;
+
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+main .productContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  place-items: center;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 16px;
+  width: 80%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.product .description {
+  margin-bottom: 0.5rem;
+}
+
+.product .price {
+  font-weight: bold;
+}
+
+body button {
+  background-color: ghostwhite;
+  border-radius: 20px;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: 0px;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  background-color: whitesmoke;
+  margin-top: 2%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 1rem;
+  place-items: center;
+}
+
+.contact-us-container {
+  width: 800px;
+  height: 700px;
+}
+
+.contact-us-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 1rem;
+  place-items: center;
+}
+
+.contact-us-container form {
+  width: 500px;
+}
+
+.contact-us-container label {
+  display: block;
+  font-weight: bold;
+}
+
+.contact-us-container input,
+.contact-us-container textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+.formulaire-double {
+  display: grid;
+  grid-template-columns: repeat(2, calc(50% - 12px));
+  align-items: flex-start;
+  gap: 24px;
+}
+
+/* Add/Edit Product Form CSS */
+.modal-body {
+  padding: 20px;
+}
+.form-group label {
+  font-weight: bold;
+}
+.form-control {
+  margin-bottom: 20px;
+}
+.modal-footer {
+  justify-content: flex-start;
+}
+
+.form-group img {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.product-image {
+  max-width: 50px;
+  max-height: 50px;
+}

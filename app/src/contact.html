@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactez-nous</title>
+    <link rel="stylesheet" href="client/utilitaires/bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="client/ressources/css/style.css">
+    <script src="client/utilitaires/jquery-3.6.3.min.js"></script>
+    <script src="client/utilitaires/bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="client/connexion/requetes.js"></script>
+    <script src="client/membre/requetes.js"></script>
+    <script src="client/ressources/js/global.js"></script>
+</head>
+<body>
+    <!-- Menu de navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-perso">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"> <img id='logo' src="/client/ressources/images/logo.png"> GPUCanada
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  
+                    <li class="nav-item">
+                        <a id="dm" class="nav-link" data-bs-toggle="modal" data-bs-target="#modalEnreg" href="#">Devenir
+                            membre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="co" class="nav-link" data-bs-toggle="modal" data-bs-target="#modalConnexion"
+                            href="#">Connexion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="contact" class="nav-link" href="contact.html">Contactez-nous</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <!-- Fin de menu de navigation -->
+    <div class="container">
+        <!-- Modal Enregistrer -->
+        <div class="modal fade" id="modalEnreg" tabindex="-1" aria-labelledby="ModalEnregLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalEnregLabel">Nouveau membre</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="row g-3" id="formEnreg">
+                            <div class="col-md-4">
+                                <label for="prenom" class="form-label">Prénom</label>
+                                <input type="text" class="form-control" id="prenom" name="prenom" value="" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="nom" class="form-label">Nom</label>
+                                <input type="text" class="form-control" id="nom" name="nom" value="" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="courriel" class="form-label">Courriel</label>
+                                <input type="email" class="form-control" id="courriel" name="courriel" value="" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="pass" class="form-label">Mot Passe</label>
+                                <input type="password" class="form-control" id="pass" name="pass" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="cpass" class="form-label">Confirmer mot passe</label>
+                                <input type="password" class="form-control" id="cpass" name="cpass" required>
+                            </div>
+                            <span class="msgFormEnreg">Pour des raison statistiques</span>
+                            <div class="form-check mb-3">
+                                <input type="radio" class="form-check-input" id="feminin" value="F" name="sexe">
+                                <label class="form-check-label" for="feminin">Féminin</label>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input type="radio" class="form-check-input" id="masculin" value="M" name="sexe">
+                                <label class="form-check-label" for="masculin">Masculin</label>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input type="radio" class="form-check-input" id="autre" value="A" name="sexe">
+                                <label class="form-check-label" for="autre">Autre</label>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="date" class="form-label">Date de naissance</label>
+                                <input type="date" class="form-control" id="datenaissance" name="datenaissance">
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary" type="button" onClick="enregistrer();">Enregister</button>
+                                <p id="msgE"></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Connexion -->
+        <div class="modal fade" id="modalConnexion" tabindex="-1" aria-labelledby="ModalConnexionLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalConnexionLabel">Connexion</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="row g-3" id="formConnexion">
+                            <div class="col-md-4">
+                                <label for="courriel" class="form-label">Courriel</label>
+                                <input type="email" class="form-control" id="courrielc" name="courrielc" value="" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="pass" class="form-label">Mot Passe</label>
+                                <input type="password" class="form-control" id="passc" name="passc" required>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary" type="button" onClick="connexion();">Connexion</button>
+                            </div>
+                            <p id="msgC"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="contact">
+        <header>
+            <h1>Contactez-nous</h1> 
+        </header>
+
+        <container class="contact-us-container">
+            <h3>Vous avez une question ou un problème ?</h3>
+
+            <h5>Utilisez ce formulaire afin de joindre notre service à la clientèle efficacement :</h5>
+            <form action="mailto:contact@gpucanada.com">
+                <div class="formulaire-double">
+                    <div class="formulaire-field">
+                        <label for="first-name">Prénom</label>
+                        <input id="first-name" type="text" required="required">
+                    </div>
+                    <div class="formulaire-field">
+                        <label for="last-name">Nom de famille</label>
+                        <input id="last-name" type="text" required="required">
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <label for="email">Votre adresse courriel</label>
+                    <input type="email" id="email" name="email"><br>
+                </div>
+                <br>
+                <div>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5"></textarea><br>
+                    <br><br>
+                    <button type="submit">Envoyer le message</button>
+                </div>
+            </form>
+        </container>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2023 GPU Canada</p>
+    </footer>
+</body>
+</html>

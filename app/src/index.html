@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPUCanada</title>
+    <link rel="stylesheet" href="client/utilitaires/bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="client/ressources/css/style.css">
+    <script src="client/utilitaires/jquery-3.6.3.min.js"></script>
+    <script src="client/utilitaires/bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="client/connexion/requetes.js"></script>
+    <script src="client/membre/requetes.js"></script>
+    <script src="client/ressources/js/global.js"></script>
+</head>
+<body>
+    <!-- Menu de navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-perso">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"> <img id='logo' src="/client/ressources/images/logo.png"> GPUCanada
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  
+                    <li class="nav-item">
+                        <a id="dm" class="nav-link" data-bs-toggle="modal" data-bs-target="#modalEnreg" href="#">Devenir
+                            membre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="co" class="nav-link" data-bs-toggle="modal" data-bs-target="#modalConnexion"
+                            href="#">Connexion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="contact" class="nav-link" href="contact.html">Contactez-nous</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </nav>
+<!-- Fin de menu de navigation -->
+<div class="container">
+    <!-- Modal Enregistrer -->
+    <div class="modal fade" id="modalEnreg" tabindex="-1" aria-labelledby="ModalEnregLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalEnregLabel">Nouveau membre</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3" id="formEnreg">
+                        <div class="col-md-4">
+                            <label for="prenom" class="form-label">Prénom</label>
+                            <input type="text" class="form-control" id="prenom" name="prenom" value="" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="nom" class="form-label">Nom</label>
+                            <input type="text" class="form-control" id="nom" name="nom" value="" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="courriel" class="form-label">Courriel</label>
+                            <input type="email" class="form-control" id="courriel" name="courriel" value="" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="pass" class="form-label">Mot Passe</label>
+                            <input type="password" class="form-control" id="pass" name="pass" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="cpass" class="form-label">Confirmer mot passe</label>
+                            <input type="password" class="form-control" id="cpass" name="cpass" required>
+                        </div>
+                        <span class="msgFormEnreg">Pour des raison statistiques</span>
+                        <div class="form-check mb-3">
+                            <input type="radio" class="form-check-input" id="feminin" value="F" name="sexe">
+                            <label class="form-check-label" for="feminin">Féminin</label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input type="radio" class="form-check-input" id="masculin" value="M" name="sexe">
+                            <label class="form-check-label" for="masculin">Masculin</label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input type="radio" class="form-check-input" id="autre" value="A" name="sexe">
+                            <label class="form-check-label" for="autre">Autre</label>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="date" class="form-label">Date de naissance</label>
+                            <input type="date" class="form-control" id="datenaissance" name="datenaissance">
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="button" onClick="enregistrer();">Enregister</button>
+                            <p id="msgE"></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Connexion -->
+    <div class="modal fade" id="modalConnexion" tabindex="-1" aria-labelledby="ModalConnexionLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalConnexionLabel">Connexion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3" id="formConnexion">
+                        <div class="col-md-4">
+                            <label for="courriel" class="form-label">Courriel</label>
+                            <input type="email" class="form-control" id="courrielc" name="courrielc" value="" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="pass" class="form-label">Mot Passe</label>
+                            <input type="password" class="form-control" id="passc" name="passc" required>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="button" onClick="connexion();">Connexion</button>
+                        </div>
+                        <p id="msgC"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<main>
+    <header>
+        <h1>GPU Canada</h1> 
+    </header>
+    
+    <h2>NVIDIA</h2>
+
+    <div class="productContainer">
+        <div class="product">
+            <img src="client/ressources/images/NVIDIA/3060ti.jpg" alt="Product Image">
+            <h3>3060 TI</h3>
+            <p class="description">GIGABYTE Vision OC GeForce RTX 3060 Ti 8GB GDDR6 PCI Express 4.0 ATX Video Card GV-N306TVISION OC-8GD (rev. 2.0) (LHR)</p>
+            <p class="price">$839.00</p>
+            <button type="button">Add to cart</button>
+        </div>
+        <div class="product">
+            <img src="client/ressources/images/NVIDIA/3070.jpg" alt="Product Image">
+            <h3>3070</h3>
+            <p class="description">GIGABYTE Gaming OC GeForce RTX 3070 8GB GDDR6 PCI Express 4.0 ATX Video Card GV-N3070GAMING OC-8GD (rev. 2.0) (LHR)</p>
+            <p class="price">$999.99</p>
+            <button type="button">Add to cart</button>
+        </div>
+        <div class="product">
+            <img src="client/ressources/images/NVIDIA/4070ti.jpg" alt="Product Image">
+            <h3>4070 TI</h3>
+            <p class="description">GIGABYTE GeForce RTX 4070 Ti GAMING OC 12G Graphics Card, 3x WINDFORCE Fans, 12GB 192-bit GDDR6X, GV-N407TGAMING OC-12GD</p>
+            <p class="price">$1,169.99</p>
+            <button type="button">Add to cart</button>
+        </div>
+            <div class="product">
+            <img src="client/ressources/images/NVIDIA/4080.jpg" alt="Product Image">
+            <h3>4080</h3>
+            <p class="description">MSI Ventus GeForce RTX 4080 16GB GDDR6X PCI Express 4.0 Video Card RTX 4080 16GB VENTUS 3X OC</p>
+            <p class="price">$1,799.99</p>
+            <button type="button">Add to cart</button>
+        </div>
+    </div>
+
+    <h2>AMD</h2>
+
+    <div class="productContainer">
+        
+        <div class="product">
+            <img src="client/ressources/images/AMD/6600.jpg" alt="Product Image">
+            <h3>6600</h3>
+            <p class="description">ASRock Radeon RX 6600 8GB GDDR6 PCI Express 4.0 Video Card RX6600 CLD 8G</p>
+            <p class="price">$559.99</p>
+            <button type="button">Add to cart</button>
+        </div>  
+        <div class="product">
+            <img src="client/ressources/images/AMD/6650XT.jpg" alt="Product Image">
+            <h3>6650 XT</h3>
+            <p class="description">MSI Mech Radeon RX 6650 XT 8GB GDDR6 PCI Express 4.0 Video Card RX 6650 XT MECH 2X 8G OC</p>
+            <p class="price">$349.99</p>
+            <button type="button">Add to cart</button>
+        </div>
+        <div class="product">
+            <img src="client/ressources/images/AMD/6950xt.jpg" alt="Product Image">
+            <h3>6950 XT</h3>
+            <p class="description">MSI Gaming Radeon RX 6950 XT 16GB GDDR6 PCI Express 4.0 Video Card RX 6950 XT GAMING X TRIO 16G</p>
+            <p class="price">$1,399.99</p>
+            <button type="button">Add to cart</button>
+        </div>
+        <div class="product">
+            <img src="client/ressources/images/AMD/7900xt.jpg" alt="Product Image">
+            <h3>7900 XT</h3>
+            <p class="description">SAPPHIRE Radeon RX 7900 XT 20GB GDDR6 PCI Express 4.0 Video Card 21323-01-20G</p>
+            <p class="price">$1,399.00</p>
+            <button type="button">Add to cart</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 GPU Canada</p>
+    </footer>      
+  </main> 
+</body>
+</html>
