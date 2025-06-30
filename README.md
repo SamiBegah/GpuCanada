@@ -1,6 +1,6 @@
 # GPUCanada
 
-GPUCanada is a full-stack e-commerce web application for selling computer graphics cards. The application features a user-friendly interface for browsing products, managing user accounts, and an administrative backend for product management.
+GPUCanada is a full-stack e-commerce web application for selling computer graphics cards. The application features a user-friendly interface for browsing products, managing user accounts, and an administrative backend for product management. Please note that this project is a functional prototype, features such as payment processing and order fulfillment are not implemented.
 
 ## Functionalities
 
