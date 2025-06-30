@@ -4,16 +4,16 @@ GPUCanada is a full-stack e-commerce web application for selling computer graphi
 
 ## Functionalities
 
-*   **User Management:** Users can create an account, log in, and manage their profile information.
-*   **Product Catalog:** The application displays a catalog of graphics cards from different brands, with product images, descriptions, and prices.
-*   **Shopping Cart:** Users can add products to their shopping cart.
-*   **Administrator Panel:** An administrative interface allows for adding, updating, and deleting products from the catalog. It also allows for managing registered users.
-*   **Search:** Users can search for specific products.
+- **User Management:** Users can create an account, log in, and manage their profile information.
+- **Product Catalog:** The application displays a catalog of graphics cards from different brands, with product images, descriptions, and prices.
+- **Shopping Cart:** Users can add products to their shopping cart.
+- **Administrator Panel:** An administrative interface allows for adding, updating, and deleting products from the catalog. It also allows for managing registered users.
+- **Search:** Users can search for specific products.
 
 ## Technologies Used
 
-*   **Frontend:** HTML, CSS, JavaScript, jQuery, and Bootstrap for a responsive and interactive user interface.
-*   **Backend:** Node.js with Express.js for the server-side logic and RESTful API. The backend is written in TypeScript, providing static typing and improved code quality. MySQL is used for storing product and user data.
+- **Frontend:** HTML, CSS, JavaScript, jQuery, and Bootstrap for a responsive and interactive user interface.
+- **Backend:** Node.js with Express.js for the server-side logic and RESTful API. The backend is written in TypeScript and MySQL is used for storing product and user data.
 
 ## How to run the project
 
@@ -24,9 +24,5 @@ GPUCanada is a full-stack e-commerce web application for selling computer graphi
 2.  Run the server:
     ```
     npm run dev
-    ```
-    or
-    ```
-    npm run go
     ```
 3.  Open your browser and go to `http://localhost:8181`
