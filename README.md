@@ -12,7 +12,7 @@ GPUCanada is a full-stack e-commerce web application for selling computer graphi
 
 ## Technologies Used
 
-- **Frontend:** HTML, CSS, JavaScript, jQuery, and Bootstrap.
+- **Frontend:** JavaScript, jQuery, HTML5, CSS3 and Bootstrap.
 - **Backend:** TypeScript, Node.js with Express.js and MySQL.
 
 ## How to run the project
