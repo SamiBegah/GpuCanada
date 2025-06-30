@@ -1,19 +1,19 @@
 # GPUCanada
 
-GPUCanada is a full-stack e-commerce web application for selling computer graphics cards. The application features a user-friendly interface for browsing products, managing user accounts, and an administrative backend for product management. Please note that this project is a functional prototype, features such as payment processing and order fulfillment are not implemented.
+GPUCanada is a full-stack e-commerce web application for selling computer graphics cards. The application features a user-friendly interface for browsing products, managing user accounts, and an administrative backend for product and user management. Please note that this project is a functional prototype, features such as payment processing and order fulfillment are not implemented.
 
 ## Functionalities
 
 - **User Management:** Users can create an account, log in, and manage their profile information.
 - **Product Catalog:** The application displays a catalog of graphics cards from different brands, with product images, descriptions, and prices.
 - **Shopping Cart:** Users can add products to their shopping cart.
-- **Administrator Panel:** An administrative interface allows for adding, updating, and deleting products from the catalog. It also allows for managing registered users.
+- **Administrator Panel:** An administrative interface allows for adding, updating, and deleting products from the catalo, as well as for managing registered users.
 - **Search:** Users can search for specific products.
 
 ## Technologies Used
 
-- **Frontend:** HTML, CSS, JavaScript, jQuery, and Bootstrap for a responsive and interactive user interface.
-- **Backend:** Node.js with Express.js for the server-side logic and RESTful API. The backend is written in TypeScript and MySQL is used for storing product and user data.
+- **Frontend:** HTML, CSS, JavaScript, jQuery, and Bootstrap.
+- **Backend:** TypeScript, Node.js with Express.js for the server-side logic and RESTful API. MySQL is used for storing product and user data.
 
 ## How to run the project
 
